@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- favicon start -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <!-- favicon end -->
+    <!-- web communication start -->
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#cf6af8" />
+    <title>Pod Survey</title>
+    <meta
+      name="description"
+      content="This is a survey about podcast listenership. I'm curious just how much podcasts you're listening to."
+    />
+    <!-- web communication end -->
+  </head>
+  <body>
+    <h1 id="title">Pod Survey</h1>
+    <p id="description">
+      This is all about whom do you commute with, go on dog walks with, and
+      listen to in your headphones right before bed. Yep, that's right,
+      podcasts.
+    </p>
+    <!-- action="POST"
+		data-netlify="true"
+		https://docs.netlify.com/forms/setup/#html-forms 
+	name="podcasts"-->
+    <form action="" id="survey-form">
+      <div>
+        <label id="name-label" for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Ira Glass"
+          required
+        />
+      </div>
+      <div>
+        <label for="email" id="email-label">Email:</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          required
+          placeholder="ira@tal.org"
+        />
+      </div>
+      <div>
+        <label for="subscriptions" id="number-label">Subscription Count:</label>
+        <input
+          type="number"
+          name="subscriptions"
+          id="number"
+          placeholder="0"
+          min="0"
+          max="9999"
+        />
+      </div>
+      <div>
+        <label for="cateogry-fav">Podcast App:</label>
+        <!-- longer list here https://www.pastemagazine.com/articles/2019/08/best-podcast-apps-2019.html -->
+        <select name="app" id="dropdown">
+          <option value="">Pick App Of Choice</option>
+          <option value="overcast">Overcast</option>
+          <option value="apple">Apple Podcasts</option>
+          <option value="spotify">Spotify</option>
+          <option value="pocket-casts">Pocket Casts</option>
+          <option value="other">Something Else</option>
+        </select>
+      </div>
+      <div>
+        <label for="category-listen">Podcast Categories Listened:</label>
+        <input type="checkbox" value="news" name="category-listen" />
+        <label for="news">News</label>
+        <input type="checkbox" value="comedy" name="category-listen" />
+        <label for="comedy">Comedy</label>
+        <input type="checkbox" value="drama" name="category-listen" />
+        <label for="comedy">Radio Drama</label>
+        <input type="checkbox" value="tech" name="category-listen" />
+        <label for="comedy">Technology</label>
+        <input type="checkbox" value="sports" name="category-listen" />
+        <label for="comedy">Sports</label>
+      </div>
+      <div>
+        <p>Do you reccomend podcasts to your friends?</p>
+        <input type="radio" name="recommend" value="yes" />
+        <label for="yes">Yes</label>
+
+        <input type="radio" name="recommend" value="no" checked />
+        <label for="no">No</label>
+      </div>
+      <div>
+        <label for="why">Why do you like podcasts?</label>
+        <textarea
+          name="why"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="They just help me sleep really..."
+        ></textarea>
+      </div>
+      <button type="submit" id="submit">Share</button>
+    </form>
+  </body>
+  <!-- for testing purposes -->
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</html>
