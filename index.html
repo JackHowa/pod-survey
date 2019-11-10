@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+      rel="stylesheet"
+    />
+
     <!-- favicon start -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -26,6 +31,7 @@
       --secondary: #121212;
       --primary13: #ffffff;
       --highlight: #cf6af8;
+      --mdc-theme-primary: #cf6af8;
     }
 
     body {
@@ -55,6 +61,10 @@
     #title {
       color: var(--highlight);
     }
+
+    #mdc-text-field-label-color {
+      color: var(--highlight);
+    }
   </style>
   <body>
     <main>
@@ -72,30 +82,51 @@
   name="podcasts"-->
       <div>
         <form class="container" action="" id="survey-form">
-          <div>
-            <label id="name-label" for="name">Name:</label>
+          <!-- <div class="mdc-text-field">
+            <input class="mdc-text-field__input" id="text-field-hero-input" />
+            <div class="mdc-line-ripple"></div>
+            <label for="text-field-hero-input" class="mdc-floating-label"
+              >Name</label
+            >
+          </div> -->
+          <div class="mdc-text-field">
             <input
               type="text"
               id="name"
               name="name"
               placeholder="Ira Glass"
+              class="mdc-text-field__input"
               required
             />
+            <div class="mdc-line-ripple"></div>
+            <label id="name-label" for="name" class="mdc-floating-label"
+              >Name</label
+            >
           </div>
-          <div>
-            <label for="email" id="email-label">Email:</label>
+          <div class="mdc-text-field">
             <input
               type="email"
               name="email"
               id="email"
               required
+              class="mdc-text-field__input"
               placeholder="ira@tal.org"
             />
+            <div class="mdc-line-ripple"></div>
+            <label class="mdc-floating-label" for="email" id="email-label"
+              >Email
+            </label>
           </div>
-          <div>
-            <label for="subscriptions" id="number-label"
-              >Subscription Count:</label
+          <div class="mdc-text-field">
+            <!-- maybe a slider here  -->
+            <label
+              for="subscriptions"
+              id="number-label"
+              class="mdc-floating-label"
+              >Subscription Count</label
             >
+            <div class="mdc-line-ripple"></div>
+
             <input
               type="number"
               name="subscriptions"
@@ -103,10 +134,13 @@
               placeholder="0"
               min="0"
               max="9999"
+              class="mdc-text-field__input"
             />
           </div>
-          <div>
-            <label for="cateogry-fav">Podcast App:</label>
+          <div >
+            <label for="cateogry-fav"
+              >Podcast App:</label
+            >
             <!-- longer list here https://www.pastemagazine.com/articles/2019/08/best-podcast-apps-2019.html -->
             <select name="app" id="dropdown">
               <option value="">Pick App Of Choice</option>
@@ -116,7 +150,7 @@
               <option value="pocket-casts">Pocket Casts</option>
               <option value="other">Something Else</option>
             </select>
-          </div>
+            <div class="mdc-line-ripple"></div>
           <div>
             <label for="category-listen">Podcast Categories Listened:</label>
             <input type="checkbox" value="news" name="category-listen" />
@@ -155,6 +189,18 @@
       </div>
     </main>
   </body>
+  <!-- Required MDC Web JavaScript library -->
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <!-- Instantiate single textfield component rendered in the document -->
+  <script>
+    // via https://github.com/material-components/material-components-web/issues/3236#issuecomment-408186344
+    document
+      .querySelectorAll(".mdc-text-field")
+      .forEach(el => mdc.textField.MDCTextField.attachTo(el));
+
+      
+    // document.querySelectorAll();
+  </script>
   <!-- for testing purposes -->
   <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
 </html>
