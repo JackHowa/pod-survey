@@ -14,10 +14,10 @@
 - [x] Basics fulfilled via FreeCodeCamp
 
 ## Roadmap
-- [ ] Basic styling
+- [x] Basic styling
   - [x] Basic formatting for pages
-  - [ ] Material design input fields https://material.io/components/text-fields/#usage
-  - [ ] Accessible targets for inputs
+  - [x] Material design input fields https://material.io/components/text-fields/#usage
+  - [x] Accessible targets for inputs
 - [ ] Submit to netlify
 - [ ] Maybe visualize subscription counts 
 - [ ] Auto-generate shows or categories from Apple Podcast directory
