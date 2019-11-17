@@ -5,7 +5,7 @@
 
 ## Metrics 
 
-[![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=70&compact&category=A11y)](https://github.com/ebidel/lighthouse-badge)
+[![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100&compact&category=A11y)](https://github.com/ebidel/lighthouse-badge)
 
 ## Why
 - Figure out why people like podcasts 
